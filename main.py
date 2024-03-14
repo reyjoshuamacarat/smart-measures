@@ -2,11 +2,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from openai import OpenAI
 import uvicorn
-from constants import ASSISTANT_ID, API_KEY
 import time
 import json
+import os
 
-client = OpenAI(api_key=API_KEY)
+client = OpenAI(api_key=os.environ.get('API_KEY'))
+ASSISTANT_ID = os.environ.get('ASSISTANT_ID')
 
 app = FastAPI()
 
