@@ -11,12 +11,9 @@ ASSISTANT_ID = os.environ.get('ASSISTANT_ID')
 
 app = FastAPI()
 
-origins = [
-    "*",
-]
-
 app.add_middleware(
     CORSMiddleware,
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
